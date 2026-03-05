@@ -606,9 +606,9 @@ h3 {
 
 .transformation-header .section-header {
   margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   max-width: none;
 }
 
@@ -925,7 +925,7 @@ h3 {
 
 /* Quote Section */
 .quote-section {
-  padding: var(--space-section) var(--gutter);
+  padding: var(--space-section) calc(2 * var(--gutter));
   max-width: var(--content-max);
   margin: 0 auto;
 }
@@ -977,6 +977,10 @@ h3 {
   font-weight: 700;
   letter-spacing: -0.045em;
   margin: 0 0 var(--space-heading-lg);
+}
+
+.section-header-tight h2 {
+  line-height: 1.05;
 }
 
 .section-header p {
