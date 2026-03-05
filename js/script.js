@@ -60,6 +60,64 @@ navToggle?.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
 
+// ===== Transformation: Scroll-driven Before/After =====
+const beforeAfterWrap = document.getElementById('before-after-wrap');
+const afterLayer = document.getElementById('after-layer');
+const beforeAfterRange = document.getElementById('before-after-range');
+const transformationSection = document.getElementById('transformation');
+const MOBILE_BREAKPOINT = 768;
+
+function updateTransformationReveal(progress) {
+  if (!afterLayer) return;
+  const clamped = Math.max(0, Math.min(1, progress));
+  afterLayer.style.setProperty('--reveal', clamped);
+  if (beforeAfterWrap) beforeAfterWrap.style.setProperty('--reveal', clamped);
+}
+
+function initTransformation() {
+  if (!transformationSection || !afterLayer) return;
+
+  const onScroll = () => {
+    if (window.innerWidth <= MOBILE_BREAKPOINT) return; // Slider mode
+    const wh = window.innerHeight;
+    const sectionTop = transformationSection.offsetTop;
+    const sectionHeight = transformationSection.offsetHeight;
+    const scrollRange = Math.max(1, sectionHeight - wh);
+    const scrolled = window.scrollY - sectionTop;
+    const progress = scrolled / scrollRange;
+    updateTransformationReveal(progress);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // Initial
+}
+
+function initTransformationSlider() {
+  if (!beforeAfterRange || !beforeAfterWrap) return;
+
+  beforeAfterRange.addEventListener('input', () => {
+    const value = Number(beforeAfterRange.value) / 100;
+    updateTransformationReveal(value);
+  });
+}
+
+function checkTransformationMode() {
+  if (!beforeAfterWrap) return;
+  const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+  beforeAfterWrap.classList.toggle('transformation-slider-mode', isMobile);
+  if (isMobile) {
+    const val = Number(beforeAfterRange?.value ?? 50) / 100;
+    updateTransformationReveal(val);
+  }
+}
+
+window.addEventListener('resize', checkTransformationMode);
+window.addEventListener('load', () => {
+  initTransformation();
+  initTransformationSlider();
+  checkTransformationMode();
+});
+
 // ===== Video Marquee: CAD → Live replay on loop =====
 const marqueeVideo = document.querySelector('.marquee-video');
 const cadOverlay = document.getElementById('cad-overlay');

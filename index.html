@@ -7,7 +7,7 @@
   <title>Design Build & Co | Home Renovation - Design for Living, Build for Life</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -42,7 +42,7 @@
       </div>
       <div class="hero-content hero-fade-in">
         <img src="images/DBCO-Logo-design-final-480px-300x173-wht.png" alt="Design Build & Co" class="hero-logo-img">
-        <h1 class="hero-title">Thoughtfully Designed.<br>Carefully Built.</h1>
+        <h1 class="hero-title"><span class="hero-title-line">Thoughtfully Designed.</span><span class="hero-title-line">Carefully Built.</span></h1>
         <p class="hero-subtitle">Architecture and construction working together to create homes that feel inevitable.</p>
       </div>
       <div class="hero-scroll-indicator">
@@ -51,12 +51,33 @@
       </div>
     </header>
 
-    <!-- CAD Kitchen Build GIF -->
-    <section class="cad-gif-section scroll-reveal">
-      <div class="cad-gif-wrap">
-        <img src="images/cad-kitchen-build.gif" alt="CAD 3D kitchen design build animation—floor, walls, cabinets, island, and fixtures assembling step by step" class="cad-gif">
+    <!-- Transformation: Scroll-driven Before/After (pinned during reveal) -->
+    <section class="transformation scroll-reveal" id="transformation">
+      <div class="transformation-sticky">
+      <div class="section-header">
+        <span class="section-tag">Our Work</span>
+        <h2>Transformation</h2>
       </div>
-      <p class="cad-gif-caption">Concept to construction—every detail designed before we build</p>
+      <div class="before-after-wrap" id="before-after-wrap">
+        <div class="before-after-inner">
+          <div class="before-layer">
+            <img src="images/transformation-before.png" alt="Before renovation">
+            <span class="before-after-label before-label">Before</span>
+          </div>
+          <div class="after-layer" id="after-layer" aria-hidden="true">
+            <img src="images/transformation-after.png" alt="After renovation">
+            <span class="before-after-label after-label">After</span>
+          </div>
+        </div>
+        <!-- Mobile slider: visible only on small screens -->
+        <div class="before-after-slider-mobile" id="before-after-slider-mobile" aria-hidden="true">
+          <input type="range" id="before-after-range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+          <div class="slider-handle-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5l4 4 4-4M8 19l4-4 4 4"/></svg>
+          </div>
+        </div>
+      </div>
+      </div>
     </section>
 
     <!-- Video Marquee: CAD to Live Walkthrough -->
@@ -285,21 +306,18 @@
           <p>Hey! I'm Buildy. I can walk you through our services, answer questions about your project, or turn your photos into a ballpark quote. What's on your mind?</p>
         </div>
       </div>
-      <div class="agent-upload" id="agent-upload">
-        <label class="upload-label">
-          <input type="file" id="quote-images" accept="image/*" multiple hidden>
-          <span class="upload-area">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
-            Upload photos for quote estimate
-          </span>
-        </label>
-        <div class="upload-preview" id="upload-preview"></div>
-        <button type="button" class="btn-get-quote" id="btn-get-quote" disabled>Generate Quote Estimate</button>
-      </div>
       <div class="agent-suggestions" id="agent-suggestions">
         <button class="suggestion-btn" data-msg="Tell me about kitchen remodels">Kitchen Remodels</button>
         <button class="suggestion-btn" data-msg="What services do you offer?">Services Overview</button>
         <button class="suggestion-btn" data-msg="How do I get a quote?">Get a Quote</button>
+      </div>
+      <div class="agent-upload" id="agent-upload">
+        <label class="upload-label">
+          <input type="file" id="quote-images" accept="image/*" multiple hidden>
+          <span class="upload-area">+ Add photos for quote</span>
+        </label>
+        <div class="upload-preview" id="upload-preview"></div>
+        <button type="button" class="btn-get-quote" id="btn-get-quote" disabled>Generate Quote Estimate</button>
       </div>
       <form class="agent-input-form" id="agent-form">
         <input type="text" id="agent-input" placeholder="Ask a question or describe your project..." autocomplete="off">
