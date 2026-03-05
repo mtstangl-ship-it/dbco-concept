@@ -926,7 +926,7 @@ h3 {
 /* Quote Section */
 .quote-section {
   padding: var(--space-section) calc(2 * var(--gutter));
-  max-width: var(--content-max);
+  max-width: min(var(--page-max), calc(100vw - 4 * var(--gutter)));
   margin: 0 auto;
 }
 
