@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 500" fill="none">
+  <defs>
+    <style>
+      .cad-line { stroke: #fff; stroke-width: 1.2; fill: none; }
+      .cad-line-dim { stroke: rgba(255,255,255,0.35); stroke-width: 0.8; fill: none; }
+      .cad-line-fine { stroke: rgba(255,255,255,0.25); stroke-width: 0.5; fill: none; }
+    </style>
+  </defs>
+  <!-- GROUND PLAN / FOUNDATION - horizontal datum -->
+  <path class="cad-line-dim" d="M0 420 L1400 420"/>
+  <path class="cad-line-fine" d="M50 420 L50 480 M200 420 L200 480 M400 420 L400 480 M600 420 L600 480 M800 420 L800 480 M1000 420 L1000 480 M1200 420 L1200 480 M1350 420 L1350 480"/>
+  <path class="cad-line-dim" d="M0 460 L1400 460"/>
+  
+  <!-- TERRAZE / STONE BASE - FLW anchoring to earth -->
+  <path class="cad-line" d="M80 420 L80 380 L280 380 L280 420 M300 420 L300 350 L500 350 L500 420 M520 420 L520 340 L880 340 L880 420 M900 420 L900 360 L1100 360 L1100 420 M1120 420 L1120 375 L1320 375 L1320 420"/>
+  <path class="cad-line-dim" d="M80 400 L280 400 M300 380 L500 380 M520 360 L880 360 M900 380 L1100 380 M1120 395 L1320 395"/>
+
+  <!-- MAIN VOLUME - long horizontal bar (Prairie style) -->
+  <path class="cad-line" d="M120 380 L120 240 L380 240 L380 380"/>
+  <path class="cad-line" d="M380 240 L380 180 L700 180 L700 380"/>
+  <path class="cad-line" d="M700 180 L700 140 L1020 140 L1020 360 L980 360 L980 380 L700 380"/>
+  <path class="cad-line" d="M1020 360 L1020 140 L1240 140 L1240 320 L1280 320 L1280 380 L1020 380"/>
+  <path class="cad-line" d="M1240 320 L1240 140 L1320 140 L1320 360 L1280 360 L1280 380"/>
+
+  <!-- CANTILEVERED WING - FLW signature -->
+  <path class="cad-line" d="M1180 320 L1180 180 L1340 180 L1340 300 L1320 300"/>
+  <path class="cad-line" d="M1180 200 L1340 200"/>
+
+  <!-- LOW ROOF PLANES - flat with deep overhangs -->
+  <path class="cad-line" d="M100 250 L400 250 L400 210 L700 210 L700 170 L1040 170 L1040 300 L1200 300 L1200 160 L1340 160"/>
+  <path class="cad-line" d="M120 240 L100 250 M380 240 L400 250 M380 180 L400 210 M700 180 L700 210 M700 140 L700 170 M1020 140 L1040 170 M1020 360 L1040 300 M1240 320 L1200 300 M1240 140 L1200 160 M1320 140 L1340 160"/>
+  <path class="cad-line-dim" d="M100 250 L100 380 M400 250 L400 380 M700 210 L700 380 M1040 170 L1040 380 M1200 160 L1200 320 M1340 160 L1340 360"/>
+
+  <!-- RIBBON WINDOWS - long horizontal bands (FLW hallmark) -->
+  <path class="cad-line" d="M140 320 L240 320 L240 340 L140 340 Z"/>
+  <path class="cad-line" d="M260 320 L350 320 L350 340 L260 340 Z"/>
+  <path class="cad-line" d="M140 270 L240 270 L240 290 L140 290 Z"/>
+  <path class="cad-line" d="M400 250 L540 250 L540 270 L400 270 Z"/>
+  <path class="cad-line" d="M400 300 L540 300 L540 320 L400 320 Z"/>
+  <path class="cad-line" d="M560 250 L680 250 L680 270 L560 270 Z"/>
+  <path class="cad-line" d="M560 300 L680 300 L680 320 L560 320 Z"/>
+  <path class="cad-line" d="M720 200 L860 200 L860 220 L720 220 Z"/>
+  <path class="cad-line" d="M720 260 L860 260 L860 280 L720 280 Z"/>
+  <path class="cad-line" d="M720 320 L900 320 L900 340 L720 340 Z"/>
+  <path class="cad-line" d="M920 220 L1000 220 L1000 240 L920 240 Z"/>
+  <path class="cad-line" d="M1040 260 L1160 260 L1160 280 L1040 280 Z"/>
+  <path class="cad-line" d="M1200 220 L1300 220 L1300 240 L1200 240 Z"/>
+  <path class="cad-line" d="M1200 270 L1300 270 L1300 290 L1200 290 Z"/>
+
+  <!-- WINDOW MULLIONS -->
+  <path class="cad-line-fine" d="M190 320 L190 340 M240 285 L240 290 M470 250 L470 270 M470 300 L470 320 M620 250 L620 270 M790 200 L790 220 M790 260 L790 280 M810 320 L810 340 M960 220 L960 240 M1100 260 L1100 280 M1250 220 L1250 240"/>
+
+  <!-- ENTRANCE / CELEBRATED THRESHOLD -->
+  <path class="cad-line" d="M540 380 L540 320 L660 320 L660 380 Z"/>
+  <path class="cad-line" d="M550 330 L650 330 M600 320 L600 380"/>
+
+  <!-- CHIMNEY MASS - FLW vertical anchor -->
+  <path class="cad-line" d="M900 340 L900 160 L940 160 L940 340"/>
+  <path class="cad-line-dim" d="M900 200 L940 200 M900 260 L940 260"/>
+
+  <!-- SECONDARY WING - lower mass -->
+  <path class="cad-line" d="M80 380 L80 340 L120 340 L120 380"/>
+  <path class="cad-line" d="M1280 380 L1280 360 L1320 360 L1320 380"/>
+
+  <!-- LANDSCAPE / SITE LINES - organic integration -->
+  <path class="cad-line-dim" d="M0 400 Q200 390 400 395 T800 392 T1200 398 T1400 395"/>
+  <path class="cad-line-fine" d="M50 435 L150 430 L250 432 L350 428 L450 430 L550 431 L650 429 L750 432 L850 430 L950 431 L1050 429 L1150 431 L1250 430 L1350 432"/>
+
+  <!-- CONSTRUCTION GRID - technical overlay -->
+  <path class="cad-line-fine" d="M0 100 L1400 100 M0 200 L1400 200 M0 300 L1400 300"/>
+  <path class="cad-line-fine" d="M200 0 L200 500 M400 0 L400 500 M600 0 L600 500 M800 0 L800 500 M1000 0 L1000 500 M1200 0 L1200 500"/>
+
+  <!-- DIMENSION LINES - elevation markers -->
+  <path class="cad-line-fine" d="M1380 420 L1380 140 M1385 420 L1395 420 M1385 140 L1395 140"/>
+  <path class="cad-line-fine" d="M20 380 L20 240 M15 380 L25 380 M15 240 L25 240"/>
+</svg>
