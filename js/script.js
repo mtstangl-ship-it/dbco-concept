@@ -21,9 +21,9 @@ document.querySelectorAll('.scroll-reveal').forEach((el) => {
   observer.observe(el);
 });
 
-// Stagger children within grids
+// Stagger children within grids - restrained timing
 document.querySelectorAll('.services-grid .service-card, .process-timeline .process-step, .portfolio-grid .portfolio-item').forEach((el, i) => {
-  el.style.transitionDelay = `${i * 0.1}s`;
+  el.style.transitionDelay = `${i * 0.08}s`;
 });
 
 // ===== Hero parallax =====
@@ -71,7 +71,16 @@ function updateTransformationReveal(progress) {
   if (!afterLayer) return;
   const clamped = Math.max(0, Math.min(1, progress));
   afterLayer.style.setProperty('--reveal', clamped);
-  if (beforeAfterWrap) beforeAfterWrap.style.setProperty('--reveal', clamped);
+  if (beforeAfterWrap) {
+    beforeAfterWrap.style.setProperty('--reveal', clamped);
+    if (window.innerWidth > MOBILE_BREAKPOINT) {
+      const inner = beforeAfterWrap.querySelector('.before-after-inner');
+      if (inner) {
+        const scale = 1 + clamped * 0.015;
+        inner.style.transform = `scale(${scale})`;
+      }
+    }
+  }
 }
 
 function initTransformation() {
@@ -105,9 +114,13 @@ function checkTransformationMode() {
   if (!beforeAfterWrap) return;
   const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
   beforeAfterWrap.classList.toggle('transformation-slider-mode', isMobile);
+  const inner = beforeAfterWrap.querySelector('.before-after-inner');
   if (isMobile) {
     const val = Number(beforeAfterRange?.value ?? 50) / 100;
     updateTransformationReveal(val);
+    if (inner) inner.style.transform = '';
+  } else if (inner) {
+    inner.style.transform = '';
   }
 }
 
